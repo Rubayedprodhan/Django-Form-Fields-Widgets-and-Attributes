@@ -25,7 +25,7 @@ class ExampleForm(forms.Form):
     comment = forms.CharField(widget=forms.Textarea(attrs={'rows':3}))
     email = forms.EmailField( label='Your Email')
     agree = forms.BooleanField(initial=True)
-    date = forms.DateField()
+    date = forms.DateField(initial=datetime.date.today)
     birth_date = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
     birth_year = forms.DateField(widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES))
     value = forms.DecimalField()
